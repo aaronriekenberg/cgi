@@ -132,7 +132,7 @@ static void printSensors(
 
         slen = sizeof(snsr);
         if (sysctl(mib, 5, &snsr, &slen, NULL, 0) == -1) {
-          return;
+          continue;
         }
 
         if ((slen > 0) &&
