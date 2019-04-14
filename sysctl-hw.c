@@ -118,7 +118,6 @@ static void printSensors(
         break;
       }
       err(1, "sensors dev %zu", dev);
-      return;
     }
 
     for (type = 0; type < SENSOR_MAX_TYPES; ++type) {
