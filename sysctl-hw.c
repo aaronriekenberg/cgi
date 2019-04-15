@@ -1,3 +1,7 @@
+/*
+ * Mostly lifted from https://github.com/openbsd/src/blob/master/sbin/sysctl/sysctl.c
+ */
+
 #include <err.h>
 #include <errno.h>
 #include <stdio.h>
