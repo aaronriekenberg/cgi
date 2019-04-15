@@ -102,15 +102,15 @@ static void printSensors(
   size_t secondLevelID,
   struct ctlname* ctlname) {
   int mib[5];
-  size_t dev;
-  struct sensordev snsrdev;
-  size_t sdlen;
-  enum sensor_type type;
-  int numt;
+  int dev;
 
   mib[0] = topLevelID;
   mib[1] = secondLevelID;
   for (dev = 0; ; ++dev) {
+    struct sensordev snsrdev;
+    size_t sdlen;
+    enum sensor_type type;
+
     mib[2] = dev;  
 
     sdlen = sizeof(snsrdev);
@@ -121,10 +121,12 @@ static void printSensors(
       if (errno == ENOENT) {
         break;
       }
-      err(1, "sensors dev %zu", dev);
+      err(1, "sensors dev %d", dev);
     }
 
     for (type = 0; type < SENSOR_MAX_TYPES; ++type) {
+      int numt;
+
       mib[3] = type;
 
       for (numt = 0; numt < snsrdev.maxnumt[type]; ++numt) {
