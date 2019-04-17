@@ -2,7 +2,7 @@ CC = cc
 CFLAGS = -g -Wall
 LDFLAGS =
 
-SYSCTL_HW_SRC = sysctl-hw.c
+SYSCTL_HW_SRC = sysctl-hw.c sysctl.c
 SYSCTL_HW_OBJS = $(SYSCTL_HW_SRC:.c=.o)
 
 all: sysctl-hw

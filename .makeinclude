@@ -1,1 +1,2 @@
 sysctl-hw.o: sysctl-hw.c
+sysctl.o: sysctl.c
