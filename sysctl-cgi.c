@@ -34,6 +34,8 @@ int main(int argc, char** argv) {
   printHTMLHeader();
 
   parse("hw", 1);
+  parse("machdep", 1);
+  parse("vm", 1);
 
   printHTMLFooter();
   

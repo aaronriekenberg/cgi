@@ -2,18 +2,18 @@ CC = cc
 CFLAGS = -g -Wall
 LDFLAGS =
 
-SYSCTL_HW_SRC = sysctl-hw.c sysctl.c
-SYSCTL_HW_OBJS = $(SYSCTL_HW_SRC:.c=.o)
+SYSCTL_CGI_SRC = sysctl-cgi.c sysctl.c
+SYSCTL_CGI_OBJS = $(SYSCTL_CGI_SRC:.c=.o)
 
-all: sysctl-hw
+all: sysctl-cgi
 
 clean:
-	rm -f *.o sysctl-hw
+	rm -f *.o sysctl-cgi
 
-sysctl-hw: $(SYSCTL_HW_OBJS)
-	$(CC) -static $(LDFLAGS) $(SYSCTL_HW_OBJS) -o $@
+sysctl-cgi: $(SYSCTL_CGI_OBJS)
+	$(CC) -static $(LDFLAGS) $(SYSCTL_CGI_OBJS) -o $@
 
 depend:
-	$(CC) $(CFLAGS) -MM $(SYSCTL_HW_SRC) > .makeinclude
+	$(CC) $(CFLAGS) -MM $(SYSCTL_CGI_SRC) > .makeinclude
 
 include .makeinclude
