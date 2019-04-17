@@ -10,13 +10,13 @@ static void printHTMLHeader() {
     "<html>\n"
     "\n"
     "<head>\n"
-    "  <title>sysctl hw</title>\n"
+    "  <title>sysctl hw machdep vm</title>\n"
     "  <meta name=\"viewport\" content=\"width=device, initial-scale=1\" />\n"
     "  <link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\">\n"
     "</head>\n"
     "\n"
     "<body>\n"
-    "  <h2>sysctl hw</h2>\n"
+    "  <h2>sysctl hw machdep vm</h2>\n"
     "  <pre>"
   );
 }
