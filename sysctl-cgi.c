@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-extern void parse(char *, int);
+extern int sysctl_main(int argc, char *argv[]);
 
 static void printHTMLHeader() {
   puts(
@@ -31,13 +31,15 @@ static void printHTMLFooter() {
 }
 
 int main(int argc, char** argv) {
+  char *sysctl_argv[] = { "sysctl", "hw", "machdep", "vm", NULL };
+  int sysctl_argc = 4;
+  int retVal;
+
   printHTMLHeader();
 
-  parse("hw", 1);
-  parse("machdep", 1);
-  parse("vm", 1);
+  retVal = sysctl_main(sysctl_argc, sysctl_argv);
 
   printHTMLFooter();
   
-  return 0;
+  return retVal;
 }

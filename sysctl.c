@@ -218,9 +218,8 @@ void vfsinit(void);
 
 char *equ = "=";
 
-#if 0
 int
-main(int argc, char *argv[])
+sysctl_main(int argc, char *argv[])
 {
 	int ch, lvl1;
 
@@ -265,7 +264,6 @@ main(int argc, char *argv[])
 		parse(*argv, 1);
 	return (0);
 }
-#endif
 
 /*
  * List all variables known to the system.
